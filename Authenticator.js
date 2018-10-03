@@ -2,6 +2,8 @@
 var myMSALObj = new Msal.UserAgentApplication("e89a9d86-e5f2-4deb-8984-232e58dcf2ba", null, acquireTokenRedirectCallBack,
     {storeAuthStateInCookie: true, cacheLocation: "localStorage"});
 
+
+//This is the funktion that calls MSGraph for access token, and login info. 
 function callMSGraph(theUrl, accessToken, callback) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function () {
@@ -12,6 +14,18 @@ function callMSGraph(theUrl, accessToken, callback) {
     xmlHttp.setRequestHeader('Authorization', 'Bearer ' + accessToken);
     xmlHttp.send();
 }
+
+function callMSGraph(theUrl, accessToken, callback) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200)
+            callback(JSON.parse(this.responseText));
+    }
+    xmlHttp.open("GET", me, drive, true); // true for asynchronous
+    xmlHttp.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+    xmlHttp.send();
+}
+
 
 var applicationConfig = {
     clientID: "e89a9d86-e5f2-4deb-8984-232e58dcf2ba",
