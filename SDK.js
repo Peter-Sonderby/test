@@ -1,10 +1,9 @@
 
 
 //The way to encode in js to ondrive. and to bulid the string
-var root = "https://api.onedrive.com/v1.0/drive/root:";
-var path = "/me/drive";
-var url2 = root + escape(path);
+
 const SDK = {
+
     serverURL: "http://localhost:8080/api",
     request: (options, cb) => {
 
@@ -34,12 +33,19 @@ error: (xhr, status, errorThrown) => {
 User: {
 
         getMyDrive: () => {
-            var path = "/me/drive";
+
+            var root = "https://api.onedrive.com/v2.0/users/"+SDK.Storage.load(".client.info");
+            var path = "/drive";
+            var url2 = root  + escape(path);
+
+           var url3 = "https://graph.microsoft.com/v1.0/me/drive/root/children"
 
       SDK.request({
 
-          headers: {authorization: SDK.Storage.load(".idtoken")},
-          url: url2,
+      /*    headers: { Authorization: 'bearer' + SDK.Storage.load(".idtoken"),
+              clientID: "e89a9d86-e5f2-4deb-8984-232e58dcf2ba"
+          },*/
+          url: url3,
           method: "GET"
       }, (err, data) =>{
           if (err) return cb(err);
