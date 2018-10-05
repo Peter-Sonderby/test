@@ -60,6 +60,9 @@ function signIn() {
         //Login Success
         showWelcomeMessage();
         acquireTokenPopupAndCallMSGraph();
+        //Dannys funktion
+        showFunktions();
+
     }, function (error) {
         console.log(error);
     });
@@ -84,14 +87,33 @@ function acquireTokenPopupAndCallMSGraph() {
 
 function graphAPICallback(data) {
     //Display user data on DOM
-    var divWelcome = document.getElementById('WelcomeMessage');
-    divWelcome.innerHTML += " to Microsoft Graph API!!";
     document.getElementById("json").innerHTML = JSON.stringify(data, null, 2);
 }
 
+
+
+
+//Dannys funktion jvf singIn()
+function showFunktions() {
+    var manageProject = document.getElementById('ManageProject');
+    manageProject.style.display ="block";
+
+    var showInfoBox = document.getElementById('LeftInputBox');
+    showInfoBox.style.display ="block";
+
+    var introText = document.getElementById('introText');
+    introText.innerHTML = ' ';
+}
+
+
+
+
+
+
+
 function showWelcomeMessage() {
     var divWelcome = document.getElementById('WelcomeMessage');
-    divWelcome.innerHTML += 'Welcome ' + myMSALObj.getUser().name;
+    divWelcome.innerHTML = myMSALObj.getUser().name;
     var loginbutton = document.getElementById('SignIn');
     loginbutton.innerHTML = 'Sign Out';
     loginbutton.setAttribute('onclick', 'signOut();');

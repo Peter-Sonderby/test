@@ -1,0 +1,119 @@
+
+
+
+.nav{
+    Background-color: rgb(85, 166, 205);
+}
+
+.navWrapper{
+    width: 100%;
+    height: 100px;
+}
+.navBar{
+    width: auto;
+    height: 90px;
+    margin-left: 10px;
+    text-align: left;
+    display: none;
+}
+
+.leftContent{
+    float: left;
+    margin-top: 3%;
+    display: none;
+}
+
+.navBtnLeft{
+    color: black;
+    margin-left: 50px;
+    display: inline-block;
+    background-color: rgb(85, 166, 205);
+    border: none;
+    text-align: center;
+
+}
+
+.navBtnLeft:hover{
+    text-decoration: underline;
+    background-color: #2a89cd;
+
+}
+
+
+.rightContent{
+    float: right;
+    margin-top: 2%;
+}
+
+.navBtnRight{
+    color: black;
+    display: inline-block;
+    margin-right: 140px;
+    background-color:rgb(85, 166, 205);
+    border: none;
+    text-align: center;
+
+}
+
+.navBtnRight:hover{
+    text-decoration: underline;
+    display: inline-block;
+    background-color: #2a89cd;
+
+}
+
+
+
+
+
+
+
+
+
+.leftBox{
+    display: none;
+
+}
+
+
+.infoBox{
+    padding-left: 40px;
+    width: 20%;
+    height: 100%;
+    border-right: 2px solid #535353;
+    float: left;
+}
+
+.line{
+    border: 1px solid #535353;
+    width: 90%;
+}
+
+.infoBtn{
+    width: 60%;
+    height: 10%;
+    margin-left: 15%;
+    margin-top: 5%;
+
+}
+
+.inputBox {
+    border: 1px solid black;
+    float: right;
+    margin-right: 5%;
+}
+
+.centerText{
+    float: left;
+    margin-left: 20%;
+
+
+}
+
+
+
+
+
+
+
+
