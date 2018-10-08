@@ -26,6 +26,40 @@ function callMSGraphGetAllTheItemsInMYDrive(theUrl, accessToken, callback) {
     xmlHttp.send();
 }
 
+function callMSGraphNewDocumentationFolder(theUrl, accessToken, callback) {
+    var  xmlHttp = new XMLHttpRequest();
+
+    data.name = "New Folder2";
+    data.folder = null;
+    var json = JSON.stringify(data);
+
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200)
+            callback(JSON.parse(this.responseText));
+    }
+    xmlHttp.open("POST", theUrl, true); // true for asynchronous
+    xmlHttp.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+    xmlHttp.send(json);
+}
+
+function newDocumentationFolder() {
+
+    myMSALObj.acquireTokenSilent(applicationConfig.graphScopes).then(function (accessToken) {
+        callMSGraphNewDocumentationFolder(applicationConfig.graphEndpoint + "/drive/root/children", accessToken, graphAPICallback );
+    }, function (error) {
+        console.log(error);
+        // Call acquireTokenPopup (popup window) in case of acquireTokenSilent failure due to consent or interaction required ONLY
+        if (error.indexOf("consent_required") !== -1 || error.indexOf("interaction_required") !== -1 || error.indexOf("login_required") !== -1) {
+            myMSALObj.acquireTokenPopup(applicationConfig.graphScopes).then(function (accessToken) {
+                callMSGraph(applicationConfig.graphEndpoint, accessToken, graphAPICallback);
+            }, function (error) {
+                console.log(error);
+            });
+        }
+    });
+}
+
+
 function getAllTheItemsInMYDrive() {
 
     myMSALObj.acquireTokenSilent(applicationConfig.graphScopes).then(function (accessToken) {
