@@ -1,0 +1,34 @@
+﻿.topDiv{
+   height: 15%;
+}
+h1 {
+    text-align: center;
+    color: rgb(46,116,181);
+    margin: 50px;
+    padding-top: 100px;
+}
+
+.centerDiv {
+    width: 100%;
+}
+
+.leftDiv {
+    border-color: rgb(46,116,181);
+    border-right-width: 4px;
+    float: left;
+    width: auto;
+    margin: 10px;
+    padding-left: 50px;
+}
+
+img {
+    border-color: rgb(46,116,181);
+    border-right-width: 4px;
+}
+
+.rightDiv {
+    padding: 10px;
+    width: auto;
+    text-align: right;
+   
+}

@@ -61,9 +61,13 @@
         }
 
         function download(content, fileName, contentType) {
-
             var a = document.createElement("a");
-            var saveDoctoolInfo = [{BookID: 1, IndexID: 1, MSId: 111, PageCount: 46}, {BookID: 1, IndexID: 2, MSId: 444, pageCount: 88}];
+            var saveDoctoolInfo = {
+                "info": [
+                    { "BookID": "1", "IndexID": "1", "MSId": "111", "PageCount": "46" },
+                    { "BookID": "1", "IndexID": "2", "MSId": "444", "pageCount": "88" }
+                ]
+        };
             content = JSON.stringify(saveDoctoolInfo);
             fileName = "Documentation values";
             contentType = ".text";

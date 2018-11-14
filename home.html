@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>hi</title>
-</head>
+﻿<!DOCTYPE html>
+<html>
 <body>
- <h1>HEJ</h1>
+
+    <p>Looping through arrays inside arrays.</p>
+
+    <p id="demo"></p>
+
+
+    
+    <script src="lib/js/jquery-3.2.1.js"></script>
+    <script src="lib/js/bootstrap.js"></script>
+ 
+
+    <script>
+
+
+
+        var myObj, i, j, x = "";
+        myObj = {
+            "info": [
+                { "BookID": "1", "IndexID": "1", "MSId": "111", "PageCount": "46" },
+                { "BookID": "1", "IndexID": "2", "MSId": "444", "pageCount": "88" }
+            ]
+
+        }
+        for (i in myObj.info) {
+            x += "<tr>" + myObj.info[i].BookID + "</tr>";
+            for (j in myObj.info[i].IndexID) {
+                x += myObj.info[i].IndexID[j] + "<br>";
+            }
+        }
+        for (i in myObj.info) {
+
+            $("#demo").append(`
+                <tabel>
+                <tr>
+                    <th class="cellHedder"> ${myObj.info[i].BookID}</th>
+                    <th class="cellHedder"> ${myObj.info[i].IndexID}</th>
+                    <th class="cellHedder"> ${myObj.info[i].FileName} </th>
+                    <th class="cellHedder"> ${myObj.info[i].Supplier} </th>
+                    <th class="cellHedder"> ${myObj.info[i].PageCount}</th>
+                    <th class="cellHedder"> ${"25"} </th>
+                    <th class="cellHedder"> ${myObj.info[i].Remarks} </th>
+                </tr>
+                </tabel>
+                `);
+        }
+        for (i in myObj.info) {
+            x += "<h2>" + myObj.info[i].BookID + "</h2>";
+            for (j in myObj.info[i].IndexID) {
+                x += myObj.info[i].IndexID[j] + "<br>";
+            }
+        }
+
+        document.getElementById("demo").innerHTML = x;
+    </script>
+
 </body>
 </html>

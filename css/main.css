@@ -1,8 +1,14 @@
 
 
-
+* {
+    box-sizing: border-box;
+}
 .nav{
     Background-color: rgb(85, 166, 205);
+}
+
+.mainDiv{
+    width: auto;
 }
 
 .navWrapper{
@@ -23,14 +29,14 @@
     display: none;
 }
 
-.navBtnLeft{
+.navBtnLeft {
     color: black;
     margin-left: 50px;
     display: inline-block;
     background-color: rgb(85, 166, 205);
     border: none;
     text-align: center;
-
+    overflow: hidden;
 }
 
 .navBtnLeft:hover{
@@ -63,23 +69,16 @@
 }
 
 
-
-
-
-
-
-
-
 .leftBox{
     display: none;
-
+    width: 15%;
 }
 
 
-.infoBox{
+.infoBox {
     padding-left: 40px;
-    width: 20%;
-    height: 100%;
+    width: auto;
+    height: auto;
     border-right: 2px solid #535353;
     float: left;
 }
@@ -103,27 +102,28 @@
     margin-right: 5%;
 }
 
-.centerText{
+.centerText {
     float: left;
-    margin-left: 20%;
-
-
+    margin-left: 2.5%;
+    overflow: hidden;
 }
 
 .tabel {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: auto;
 }
 
 .rowInTabel {
     background-color: #dddddd;
+    width: auto;
 }
 
 .cellHedder {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    width: auto;
 }
 
 
