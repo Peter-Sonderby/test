@@ -63,20 +63,20 @@
         function download(content, fileName, contentType) {
             var a = document.createElement("a");
             var saveDoctoolInfo = {
-                "info": [
-                    { "BookID": "1", "IndexID": "1", "MSId": "111", "PageCount": "46" },
-                    { "BookID": "1", "IndexID": "2", "MSId": "444", "pageCount": "88" }
+                info: [
+                    { BookID: "1", IndexID: "1", fileName: "PDF.pdf", supplier: "SiccaDania", MSId: "111T", pageCount: 46, remarks: "filen er gammel" },
+                    { BookID: "1", IndexID: "2", fileName: "PDF.pdf", supplier: "Logitech", MSId: "444B", pageCount: 88, remarks: "Test" }
                 ]
         };
             content = JSON.stringify(saveDoctoolInfo);
-            fileName = "Documentation values";
+            fileName = "Final";
             contentType = ".text";
             var file = new Blob([content], {type: contentType});
             a.href = URL.createObjectURL(file);
             a.download = fileName;
             a.click();
         }
-        download(jsonData, 'json.txt', 'text/plain');
+       // download(jsonData, 'json.txt', 'text/plain');
     </script>
 </head>
 <body onload="checkFileAPI();">

@@ -13,8 +13,12 @@ h1 {
 }
 
 .leftDiv {
+    border-style: solid;
     border-color: rgb(46,116,181);
-    border-right-width: 4px;
+    border-right-width: 8px;
+    border-bottom: hidden;
+    border-top: hidden;
+    border-left: hidden;
     float: left;
     width: auto;
     margin: 10px;
@@ -22,8 +26,7 @@ h1 {
 }
 
 img {
-    border-color: rgb(46,116,181);
-    border-right-width: 4px;
+   
 }
 
 .rightDiv {

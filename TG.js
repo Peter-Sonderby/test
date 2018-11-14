@@ -4,19 +4,34 @@
         var myObj, i, j, x = ""
         console.log(filelist + " TG ");
         var myObj = JSON.parse(filelist);
-        console.log(myObj + "  INFO lin 7");
+        var info = JSON.parse(myObj);
+        console.log(info + "  INFO lin 7");
+        var nr = info.info.length;
+        console.log(nr);
+        $("#tabelStart").append(`
+              <tr>
+                <th class="cellHedder"> test</th >
+                <th class="cellHedder"> test</th>
+                <th class="cellHedder"> test</th>
+                <th class="cellHedder"> test </th>
+                <th class="cellHedder"> test</th>
+                <th class="cellHedder"> test </th>
+                <th class="cellHedder"> test </th>
+              </tr>
+            `);
 
-        for (i in myObj.info) {
-            Console.log(myObj.info[i].BookID)
+
+        for (i in info.info) {
+           
             $("#tabelStart").append(`
               <tr>
-                <th class="cellHedder"> ${myObj.info[i].BookID}</th >
-                <th class="cellHedder"> ${myObj.info[i].IndexID}</th>
-                <th class="cellHedder"> ${myObj.info[i].FileName} </th>
-                <th class="cellHedder"> ${myObj.info[i].Supplier} </th>
-                <th class="cellHedder"> ${myObj.info[i].PageCount}</th>
+                <th class="cellHedder"> ${info.info[i].BookID}</th >
+                <th class="cellHedder"> ${info.info[i].IndexID}</th>
+                <th class="cellHedder"> ${info.info[i].fileName} </th>
+                <th class="cellHedder"> ${info.info[i].supplier} </th>
+                <th class="cellHedder"> ${info.info[i].pageCount}</th>
                 <th class="cellHedder"> ${"25"} </th>
-                <th class="cellHedder"> ${myObj.info[i].Remarks} </th>
+                <th class="cellHedder"> ${info.info[i].remarks} </th>
               </tr>
             `);
         }
